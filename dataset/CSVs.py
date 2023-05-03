@@ -46,6 +46,6 @@ def createCSV(urls):
         i += 1
         time.sleep(5)
     mergeCSVs(files)
-    print('Removing- old files..\n')
+    print('Removing old files..\n')
     for badFile in toBeDeleted:
         os.remove(badFile)
