@@ -9,7 +9,6 @@ def formatJson(jsonFile):
 
     for match in data["Matches"]:
         del match["name"]
-        del match["selection2"]
 
     with open('file.json', 'w') as file:
         json.dump(data, file)
