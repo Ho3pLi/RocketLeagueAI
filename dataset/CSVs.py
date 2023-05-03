@@ -19,7 +19,7 @@ def mergeCSVs(files):
     dataFrame = pd.DataFrame()
     for file in files:
         print('CSV name: '+str(file))
-        data = pd.read_csv(file, sep=';')
+        data = pd.read_csv(file)
         dataFrame = pd.concat([dataFrame, data], axis=0)
     dataFrame.to_csv('allMatches.csv', index=False)
     print('Merge done\n')
