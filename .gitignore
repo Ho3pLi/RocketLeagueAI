@@ -1,0 +1,8 @@
+#ignoring all csv files
+*.csv
+
+#ignoring all json files
+*.json
+
+#ignoring pycache folder
+__pycache__
