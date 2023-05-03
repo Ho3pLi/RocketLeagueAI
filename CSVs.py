@@ -5,6 +5,7 @@ import time
 import pandas as pd
 import os
 
+#NOTE - use this method to get csv download url for every match
 def getUrls(ids):
     urls = []
     for id in ids:
@@ -12,6 +13,7 @@ def getUrls(ids):
         urls.append(url)
     return urls
 
+#NOTE - use this method to merge all the csv files
 def mergeCSVs(files):
     print('Merging files..\n')
     dataFrame = pd.DataFrame()
@@ -22,6 +24,7 @@ def mergeCSVs(files):
     dataFrame.to_csv('allMatches.csv', index=False)
     print('Merge done\n')
 
+#NOTE - use this method to download all the csv files
 def createCSV(urls):
     i = 0
     files = []
