@@ -3,6 +3,7 @@ import requests
 import time
 import pandas as pd
 import os
+import csv
 
 #NOTE - use this method to get csv download url for every match
 def getUrls(ids):
@@ -48,3 +49,15 @@ def createCSV(urls):
     print('Removing old files..\n')
     for badFile in toBeDeleted:
         os.remove(badFile)
+
+def updateCSV(csvFile, data):
+    with open(csvFile, 'r') as file:
+        csv_reader = csv.reader(file)
+        csv_list = list(csv_reader)
+
+    with open('updatedFile.csv', 'w', newline='') as file:
+        csv_writer = csv.writer(file)
+        
+        for i in range(len(csv_list)):
+            csv_list[i][1] = data[i]
+            csv_writer.writerow(csv_list[i])
