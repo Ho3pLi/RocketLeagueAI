@@ -1,5 +1,4 @@
 #NOTE - from the json formatted, use this file to download all the csv
-
 import requests
 import time
 import pandas as pd
@@ -11,7 +10,7 @@ def getUrls(ids):
     for id in ids:
         url = 'https://ballchasing.com/dl/stats/players/'+id+'/'+id+'-players.csv'
         urls.append(url)
-    return urls
+    return urls 
 
 #NOTE - use this method to merge all the csv files
 def mergeCSVs(files):
