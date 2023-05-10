@@ -50,7 +50,7 @@ def createCSV(urls):
     for badFile in toBeDeleted:
         os.remove(badFile)
 
-def updateCSV(csvFile, data):
+def updateCSV(csvFile, data=''):
     with open(csvFile, 'r') as file:
         csv_reader = csv.reader(file)
         csv_list = list(csv_reader)
@@ -59,5 +59,9 @@ def updateCSV(csvFile, data):
         csv_writer = csv.writer(file)
         
         for i in range(len(csv_list)):
-            csv_list[i][1] = data[i]
-            csv_writer.writerow(csv_list[i])
+            if csv_list[i][1] > str(350):
+                csv_list[i][1] = 1
+                csv_writer.writerow(csv_list[i])
+            elif csv_list[i][1] < str(350):
+                csv_list[i][1] = 0
+                csv_writer.writerow(csv_list[i])
